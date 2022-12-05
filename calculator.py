@@ -33,13 +33,11 @@ def main():
         or user_operation == "/"
         or user_operation == "%"
     ):
-        print()
         # asks user for the first number that they want to use in their operation
         first_number_string = input("Enter your first number here: ")
         try:
             first_number_float = float(first_number_string)
 
-            print()
             # asks user for the second number that they want to use in their equation
             second_number_string = input("Enter your second number here: ")
             try:
@@ -49,9 +47,8 @@ def main():
                 solution_user = calculate(
                     user_operation, first_number_float, second_number_float
                 )
-                print()
                 print(
-                    " The result of {} {} {} = {}".format(
+                    "The result of {} {} {} = {:.2f}".format(
                         first_number_float,
                         user_operation,
                         second_number_float,
@@ -60,15 +57,12 @@ def main():
                 )
             # catches any invalid input
             except Exception:
-                print()
                 print("{} is not a valid number. ".format(second_number_string))
         # catches any invalid input
         except Exception:
-            print()
             print("{} is not a valid number.".format(first_number_string))
     # catches any invalid input
     else:
-        print()
         print("{} is not a valid operator".format(user_operation))
 
 
